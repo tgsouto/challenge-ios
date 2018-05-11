@@ -10,12 +10,17 @@ import UIKit
 
 class SlideViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    var slides: [UI]
+    var banners: [ResponseModel.Banner] = []
+    
+    private lazy var bannersViewController: [UIViewController] = instantiateViews()
+    
+    weak var slideDelegate: SlideViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        dataSource = self
+        delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,11 +29,38 @@ class SlideViewController: UIPageViewController, UIPageViewControllerDataSource,
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
+        let bannerController = viewController as! BannerViewController
+        let index = bannerController.index
+        self.slideDelegate?.slidePageViewController(slidePageViewController: self, didUpdatePageIndex: index)
+        if index == 0 {
+            return nil
+        } else {
+            return self.bannersViewController[index - 1]
+        }
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        let bannerController = viewController as! BannerViewController
+        let index = bannerController.index
+        self.slideDelegate?.slidePageViewController(slidePageViewController: self, didUpdatePageIndex: index)
+        if index == (self.banners.count - 1) {
+            return nil
+        } else {
+            return self.bannersViewController[index + 1]
+        }
+    }
+    
+    private func instantiateViews () -> [UIViewController] {
+        var views: [UIViewController] = []
         
+        for (index, banner) in self.banners.enumerated() {
+            let viewController = storyboard?.instantiateViewController(withIdentifier: "banner") as? BannerViewController
+            viewController?.banner = banner
+            viewController?.index = index
+            views.append(viewController!)
+        }
+        
+        return views
     }
 
     /*
@@ -41,4 +73,10 @@ class SlideViewController: UIPageViewController, UIPageViewControllerDataSource,
     }
     */
 
+}
+
+protocol SlideViewControllerDelegate: class {
+    func slidePageViewController(slidePageViewController: SlideViewController, didUpdatePageCount count: Int)
+    func slidePageViewController(slidePageViewController: SlideViewController, didUpdatePageIndex index: Int)
+    func getCurrentPageIndex () -> Int
 }

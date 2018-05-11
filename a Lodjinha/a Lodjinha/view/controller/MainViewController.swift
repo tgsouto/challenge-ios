@@ -8,18 +8,38 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, SlideViewControllerDelegate {
 
+    @IBOutlet weak var pageControl: UIPageControl!
+    
+    private var viewModel: MainViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.viewModel = MainViewModelFactory.create()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let slideViewController = segue.destination as? SlideViewController {
+            slideViewController.slideDelegate = self
+        }
+    }
+    
+    func onboardingPageViewController(onboardingPageViewController: OnboardingViewController, didUpdatePageCount count: Int) {
+        self.pageControl.numberOfPages = count
+    }
+    
+    func onboardingPageViewController(onboardingPageViewController: OnboardingViewController, didUpdatePageIndex index: Int) {
+        self.pageControl.currentPage = index
+    }
+    
+    func getCurrentPageIndex() -> Int {
+        return self.pageControl.currentPage
+    }
 
 }
 

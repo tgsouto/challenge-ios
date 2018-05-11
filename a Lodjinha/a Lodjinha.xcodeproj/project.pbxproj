@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2ED90269379AA974C1CDEE02 /* Pods_a_LodjinhaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9439C17A90498CA8BB79B55 /* Pods_a_LodjinhaUITests.framework */; };
 		43A18BB6DA192900EE34E516 /* Pods_a_LodjinhaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E48DD419359D65A5C785A70 /* Pods_a_LodjinhaTests.framework */; };
+		69164CA320A5B2C100CC80E7 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69164CA220A5B2C100CC80E7 /* BannerViewController.swift */; };
 		7ABD50F7B552EBD51C448F09 /* Pods_a_Lodjinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB53EADF5437DCEDE4094C /* Pods_a_Lodjinha.framework */; };
 		7B08B2CA20A526F7002D2B32 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08B2C120A526F6002D2B32 /* MainViewController.swift */; };
 		7B08B2CB20A526F7002D2B32 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08B2C220A526F6002D2B32 /* AboutViewController.swift */; };
@@ -21,8 +22,8 @@
 		7B08B2D820A52B5A002D2B32 /* BannerRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08B2D720A52B5A002D2B32 /* BannerRemote.swift */; };
 		7B08B2DA20A52F5B002D2B32 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08B2D920A52F5B002D2B32 /* RequestModel.swift */; };
 		7B08B2DC20A52F92002D2B32 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08B2DB20A52F92002D2B32 /* ResponseModel.swift */; };
-		7B08B2DF20A53289002D2B32 /* BannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08B2DE20A53289002D2B32 /* BannerViewModel.swift */; };
-		7B08B2E220A5333B002D2B32 /* BannerViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08B2E120A5333B002D2B32 /* BannerViewModelFactory.swift */; };
+		7B08B2DF20A53289002D2B32 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08B2DE20A53289002D2B32 /* MainViewModel.swift */; };
+		7B08B2E220A5333B002D2B32 /* MainViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08B2E120A5333B002D2B32 /* MainViewModelFactory.swift */; };
 		7B670DBA20A502DF0002B5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B670DB920A502DF0002B5A3 /* AppDelegate.swift */; };
 		7B670DCF20A502E20002B5A3 /* a_LodjinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B670DCE20A502E20002B5A3 /* a_LodjinhaTests.swift */; };
 		7B670DDA20A502E20002B5A3 /* a_LodjinhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B670DD920A502E20002B5A3 /* a_LodjinhaUITests.swift */; };
@@ -50,6 +51,7 @@
 		0E48DD419359D65A5C785A70 /* Pods_a_LodjinhaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_a_LodjinhaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1910EC86D5D2D032F56A0498 /* Pods-a LodjinhaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-a LodjinhaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-a LodjinhaTests/Pods-a LodjinhaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		370EBDA3A71CD213EBCF2806 /* Pods-a Lodjinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-a Lodjinha.release.xcconfig"; path = "Pods/Target Support Files/Pods-a Lodjinha/Pods-a Lodjinha.release.xcconfig"; sourceTree = "<group>"; };
+		69164CA220A5B2C100CC80E7 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		7B08B2C120A526F6002D2B32 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		7B08B2C220A526F6002D2B32 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		7B08B2C520A526F7002D2B32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,8 +63,8 @@
 		7B08B2D720A52B5A002D2B32 /* BannerRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerRemote.swift; sourceTree = "<group>"; };
 		7B08B2D920A52F5B002D2B32 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 		7B08B2DB20A52F92002D2B32 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
-		7B08B2DE20A53289002D2B32 /* BannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModel.swift; sourceTree = "<group>"; };
-		7B08B2E120A5333B002D2B32 /* BannerViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewModelFactory.swift; sourceTree = "<group>"; };
+		7B08B2DE20A53289002D2B32 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		7B08B2E120A5333B002D2B32 /* MainViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelFactory.swift; sourceTree = "<group>"; };
 		7B670DB620A502DF0002B5A3 /* a Lodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "a Lodjinha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B670DB920A502DF0002B5A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B670DC520A502E20002B5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				7B08B2C120A526F6002D2B32 /* MainViewController.swift */,
 				7B08B2C220A526F6002D2B32 /* AboutViewController.swift */,
 				7B08B2D120A52902002D2B32 /* SlideViewController.swift */,
+				69164CA220A5B2C100CC80E7 /* BannerViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -175,7 +178,7 @@
 		7B08B2DD20A53260002D2B32 /* viewcontroler */ = {
 			isa = PBXGroup;
 			children = (
-				7B08B2DE20A53289002D2B32 /* BannerViewModel.swift */,
+				7B08B2DE20A53289002D2B32 /* MainViewModel.swift */,
 			);
 			path = viewcontroler;
 			sourceTree = "<group>";
@@ -183,7 +186,7 @@
 		7B08B2E020A5331E002D2B32 /* factory */ = {
 			isa = PBXGroup;
 			children = (
-				7B08B2E120A5333B002D2B32 /* BannerViewModelFactory.swift */,
+				7B08B2E120A5333B002D2B32 /* MainViewModelFactory.swift */,
 			);
 			path = factory;
 			sourceTree = "<group>";
@@ -215,8 +218,8 @@
 			children = (
 				7B08B2C320A526F6002D2B32 /* core */,
 				7B08B2BE20A526F6002D2B32 /* date */,
-				7B08B2C420A526F7002D2B32 /* resources */,
 				7B08B2BF20A526F6002D2B32 /* view */,
+				7B08B2C420A526F7002D2B32 /* resources */,
 				7B670DB920A502DF0002B5A3 /* AppDelegate.swift */,
 				7B670DC520A502E20002B5A3 /* Info.plist */,
 			);
@@ -276,6 +279,7 @@
 				7B670DB320A502DF0002B5A3 /* Frameworks */,
 				7B670DB420A502DF0002B5A3 /* Resources */,
 				DDADE3ACEB2112D079AF322A /* [CP] Embed Pods Frameworks */,
+				DCF33EF89BDB13D133C0361C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -295,6 +299,7 @@
 				7B670DC720A502E20002B5A3 /* Frameworks */,
 				7B670DC820A502E20002B5A3 /* Resources */,
 				B198DB6B017F63CBC4B4F25E /* [CP] Embed Pods Frameworks */,
+				D937F19BC57DC2EFEC477E88 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,6 +319,8 @@
 				7B670DD120A502E20002B5A3 /* Sources */,
 				7B670DD220A502E20002B5A3 /* Frameworks */,
 				7B670DD320A502E20002B5A3 /* Resources */,
+				F560E1778AADCEEBC9FD735D /* [CP] Embed Pods Frameworks */,
+				5C739283F889D341537F48FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -415,6 +422,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5C739283F889D341537F48FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-a LodjinhaUITests/Pods-a LodjinhaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B198DB6B017F63CBC4B4F25E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,6 +475,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D937F19BC57DC2EFEC477E88 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-a LodjinhaTests/Pods-a LodjinhaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCF33EF89BDB13D133C0361C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-a Lodjinha/Pods-a Lodjinha-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DDADE3ACEB2112D079AF322A /* [CP] Embed Pods Frameworks */ = {
@@ -501,6 +553,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F560E1778AADCEEBC9FD735D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-a LodjinhaUITests/Pods-a LodjinhaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -510,12 +577,13 @@
 			files = (
 				7B08B2D220A52902002D2B32 /* SlideViewController.swift in Sources */,
 				7B08B2CA20A526F7002D2B32 /* MainViewController.swift in Sources */,
-				7B08B2DF20A53289002D2B32 /* BannerViewModel.swift in Sources */,
+				7B08B2DF20A53289002D2B32 /* MainViewModel.swift in Sources */,
+				69164CA320A5B2C100CC80E7 /* BannerViewController.swift in Sources */,
 				7B08B2CB20A526F7002D2B32 /* AboutViewController.swift in Sources */,
 				7B08B2D820A52B5A002D2B32 /* BannerRemote.swift in Sources */,
 				7B08B2DA20A52F5B002D2B32 /* RequestModel.swift in Sources */,
 				7B670DBA20A502DF0002B5A3 /* AppDelegate.swift in Sources */,
-				7B08B2E220A5333B002D2B32 /* BannerViewModelFactory.swift in Sources */,
+				7B08B2E220A5333B002D2B32 /* MainViewModelFactory.swift in Sources */,
 				7B08B2DC20A52F92002D2B32 /* ResponseModel.swift in Sources */,
 				7B08B2D620A52ACE002D2B32 /* BasicRemote.swift in Sources */,
 			);

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14112" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l5B-XU-6B0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="l5B-XU-6B0">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,7 +31,7 @@
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDD-i6-5Sv">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="xkE-cO-c24"/>
+                                            <constraint firstAttribute="width" secondItem="IDD-i6-5Sv" secondAttribute="height" multiplier="5:2" id="kpt-oC-C6m"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="8xW-wN-tCY" kind="embed" id="2Ui-R5-Soz"/>
@@ -64,6 +65,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homeSelected" landscapeImage="homeSelected" selectedImage="homeSelected" id="csU-Vq-92y"/>
                     <navigationItem key="navigationItem" title="Title" id="SkV-Xr-ROn"/>
+                    <connections>
+                        <outlet property="pageControl" destination="cTd-PZ-xYE" id="AWG-KO-vbO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,36 +81,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a Lodjinha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sic-eV-2mY">
-                                <rect key="frame" x="67.5" y="220" width="185" height="47"/>
-                                <fontDescription key="fontDescription" name="Pacifico-Regular" family="Pacifico" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 de Maio de 2018" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8w9-KT-frp">
-                                <rect key="frame" x="104.5" y="488" width="111" height="15"/>
+                                <rect key="frame" x="105" y="488.5" width="110.5" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiago Garcia Souto" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXn-g3-9V8">
-                                <rect key="frame" x="83" y="459" width="154" height="21"/>
+                                <rect key="frame" x="83" y="460" width="154.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAbout" translatesAutoresizingMaskIntoConstraints="NO" id="gBs-Jy-irl">
-                                <rect key="frame" x="124.5" y="120" width="71" height="76"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="g8z-Jo-N60">
+                                <rect key="frame" x="71.5" y="120" width="177" height="162.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoAbout" translatesAutoresizingMaskIntoConstraints="NO" id="gBs-Jy-irl">
+                                        <rect key="frame" x="53" y="0.0" width="71" height="76"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="a Lodjinha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sic-eV-2mY">
+                                        <rect key="frame" x="0.0" y="92" width="177" height="70.5"/>
+                                        <fontDescription key="fontDescription" name="Pacifico-Regular" family="Pacifico" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="g8z-Jo-N60" firstAttribute="centerX" secondItem="Q51-qQ-whN" secondAttribute="centerX" id="DQ9-bT-JIi"/>
                             <constraint firstItem="8w9-KT-frp" firstAttribute="top" secondItem="DXn-g3-9V8" secondAttribute="bottom" constant="8" id="JHV-g0-PNI"/>
                             <constraint firstItem="8w9-KT-frp" firstAttribute="centerX" secondItem="Q51-qQ-whN" secondAttribute="centerX" id="Ljh-Yr-ASZ"/>
-                            <constraint firstItem="Sic-eV-2mY" firstAttribute="centerX" secondItem="Q51-qQ-whN" secondAttribute="centerX" id="Ofx-7H-oWU"/>
-                            <constraint firstItem="Sic-eV-2mY" firstAttribute="top" secondItem="gBs-Jy-irl" secondAttribute="bottom" constant="24" id="R7F-wP-Ds6"/>
-                            <constraint firstItem="gBs-Jy-irl" firstAttribute="centerX" secondItem="Q51-qQ-whN" secondAttribute="centerX" id="Rcb-wk-Odx"/>
-                            <constraint firstItem="gBs-Jy-irl" firstAttribute="top" secondItem="OCk-Hm-WWI" secondAttribute="top" constant="56" id="u1g-XY-NXo"/>
+                            <constraint firstItem="g8z-Jo-N60" firstAttribute="top" secondItem="OCk-Hm-WWI" secondAttribute="top" constant="56" id="n1T-3U-hkW"/>
                             <constraint firstItem="DXn-g3-9V8" firstAttribute="centerX" secondItem="Q51-qQ-whN" secondAttribute="centerX" id="vcp-3H-Jwb"/>
                             <constraint firstItem="OCk-Hm-WWI" firstAttribute="bottom" secondItem="8w9-KT-frp" secondAttribute="bottom" constant="16" id="zfn-Ty-TpO"/>
                         </constraints>
@@ -176,20 +183,26 @@
             </objects>
             <point key="canvasLocation" x="807" y="972"/>
         </scene>
-        <!--View Controller-->
+        <!--Banner View Controller-->
         <scene sceneID="hR1-Sq-SlA">
             <objects>
-                <viewController id="V59-ze-zhZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="banner" id="V59-ze-zhZ" customClass="BannerViewController" customModule="a_Lodjinha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2fV-He-vvA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nt5-Aq-Pws">
-                                <rect key="frame" x="40" y="59" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nt5-Aq-Pws">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nt5-Aq-Pws" firstAttribute="bottom" secondItem="08N-Wf-UEw" secondAttribute="bottom" id="4hA-TP-1dQ"/>
+                            <constraint firstItem="Nt5-Aq-Pws" firstAttribute="centerX" secondItem="2fV-He-vvA" secondAttribute="centerX" id="X7F-PV-hnf"/>
+                            <constraint firstItem="08N-Wf-UEw" firstAttribute="trailing" secondItem="Nt5-Aq-Pws" secondAttribute="trailing" id="Ynj-Hv-WgU"/>
+                            <constraint firstItem="Nt5-Aq-Pws" firstAttribute="top" secondItem="08N-Wf-UEw" secondAttribute="top" id="Zo3-LN-FoI"/>
+                            <constraint firstItem="Nt5-Aq-Pws" firstAttribute="leading" secondItem="08N-Wf-UEw" secondAttribute="leading" id="geB-pq-REp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="08N-Wf-UEw"/>
                     </view>
                 </viewController>
