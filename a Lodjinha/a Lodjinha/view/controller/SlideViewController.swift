@@ -76,7 +76,7 @@ class SlideViewController: UIPageViewController, UIPageViewControllerDataSource,
 }
 
 protocol SlideViewControllerDelegate: class {
-    func slidePageViewController(slidePageViewController: SlideViewController, didUpdatePageCount count: Int)
-    func slidePageViewController(slidePageViewController: SlideViewController, didUpdatePageIndex index: Int)
+    func pageViewController(slidePageViewController: SlideViewController, didUpdatePageCount count: Int)
+    func pageViewController(slidePageViewController: SlideViewController, didUpdatePageIndex index: Int)
     func getCurrentPageIndex () -> Int
 }

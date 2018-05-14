@@ -13,10 +13,16 @@ class MainViewController: UIViewController, SlideViewControllerDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     
     private var viewModel: MainViewModel?
+    private var homeList: [[Any]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel = MainViewModelFactory.create()
+        
+        self.viewModel?.getBanners()
+            .subscribe(onNext: { result in
+                homeList.append(contentsOf: result.data)
+            })
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,11 +35,11 @@ class MainViewController: UIViewController, SlideViewControllerDelegate {
         }
     }
     
-    func onboardingPageViewController(onboardingPageViewController: OnboardingViewController, didUpdatePageCount count: Int) {
+    func pageViewController(slidePageViewController: SlideViewController, didUpdatePageCount count: Int) {
         self.pageControl.numberOfPages = count
     }
     
-    func onboardingPageViewController(onboardingPageViewController: OnboardingViewController, didUpdatePageIndex index: Int) {
+    func pageViewController(slidePageViewController: SlideViewController, didUpdatePageIndex index: Int) {
         self.pageControl.currentPage = index
     }
     

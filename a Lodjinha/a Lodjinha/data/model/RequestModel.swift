@@ -8,10 +8,7 @@
 
 import Foundation
 
-class BannerViewModel {
+class RequestModel {
     
-    func getBanners(<#parameters#>) -> <#return type#> {
-        <#function body#>
-    }
     
 }
