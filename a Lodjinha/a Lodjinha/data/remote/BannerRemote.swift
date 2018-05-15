@@ -13,7 +13,7 @@ import RxSwift
 
 class BannerRemote: BasicRemote {
     
-    func list () -> Observable<ResponseModel.Banners> {
+    func list () -> Observable<ResponseModel.Banners?> {
         let url = baseUrl + "banner"
         return Observable.create { observer in
             Alamofire.request(url, method: .post).responseObject {
@@ -26,8 +26,9 @@ class BannerRemote: BasicRemote {
                 }
                 observer.on(.completed)
             }
+            return Disposables.create()
         }
-        return Disposables.create()
+        
     }
     
 }

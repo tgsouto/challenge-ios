@@ -20,7 +20,7 @@ class SlideViewController: UIPageViewController, UIPageViewControllerDataSource,
         super.viewDidLoad()
         dataSource = self
         delegate = self
-        
+        self.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,10 +28,18 @@ class SlideViewController: UIPageViewController, UIPageViewControllerDataSource,
         // Dispose of any resources that can be recreated.
     }
     
+    func reloadData () {
+        self.bannersViewController = instantiateViews()
+        self.slideDelegate?.pageViewController(pageViewController: self, didUpdatePageCount: self.bannersViewController.count)
+        if let firstViewController = self.bannersViewController.first {
+            setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+        }
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let bannerController = viewController as! BannerViewController
         let index = bannerController.index
-        self.slideDelegate?.slidePageViewController(slidePageViewController: self, didUpdatePageIndex: index)
+        self.slideDelegate?.pageViewController(pageViewController: self, didUpdatePageIndex: index)
         if index == 0 {
             return nil
         } else {
@@ -42,7 +50,7 @@ class SlideViewController: UIPageViewController, UIPageViewControllerDataSource,
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let bannerController = viewController as! BannerViewController
         let index = bannerController.index
-        self.slideDelegate?.slidePageViewController(slidePageViewController: self, didUpdatePageIndex: index)
+        self.slideDelegate?.pageViewController(pageViewController: self, didUpdatePageIndex: index)
         if index == (self.banners.count - 1) {
             return nil
         } else {
@@ -76,7 +84,7 @@ class SlideViewController: UIPageViewController, UIPageViewControllerDataSource,
 }
 
 protocol SlideViewControllerDelegate: class {
-    func pageViewController(slidePageViewController: SlideViewController, didUpdatePageCount count: Int)
-    func pageViewController(slidePageViewController: SlideViewController, didUpdatePageIndex index: Int)
+    func pageViewController(pageViewController: SlideViewController, didUpdatePageCount count: Int)
+    func pageViewController(pageViewController: SlideViewController, didUpdatePageIndex index: Int)
     func getCurrentPageIndex () -> Int
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class MainViewModel {
     
@@ -16,9 +17,7 @@ class MainViewModel {
         self.bannerRemote = bannerRemote
     }
     
-    func getBanners() -> Observable<ResponseModel.Banners> {
-        self.bannerRemote.list().flatMap { banners in
-            return banners
-        }
+    func getBanners() -> Observable<ResponseModel.Banners?> {
+        return self.bannerRemote.list()
     }
 }

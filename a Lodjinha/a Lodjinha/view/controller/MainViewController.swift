@@ -13,7 +13,7 @@ class MainViewController: UIViewController, SlideViewControllerDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     
     private var viewModel: MainViewModel?
-    private var homeList: [[Any]] = []
+    private var banners: [ResponseModel.Banner] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,8 @@ class MainViewController: UIViewController, SlideViewControllerDelegate {
         
         self.viewModel?.getBanners()
             .subscribe(onNext: { result in
-                homeList.append(contentsOf: result.data)
+                self.banners = result!.data
+                self.performSegue(withIdentifier: "slide", sender: nil)
             })
     }
 
@@ -32,14 +33,17 @@ class MainViewController: UIViewController, SlideViewControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let slideViewController = segue.destination as? SlideViewController {
             slideViewController.slideDelegate = self
+            slideViewController.banners = self.banners
         }
     }
     
-    func pageViewController(slidePageViewController: SlideViewController, didUpdatePageCount count: Int) {
-        self.pageControl.numberOfPages = count
+    func pageViewController(pageViewController: SlideViewController, didUpdatePageCount count: Int) {
+        if count > 0 {
+            self.pageControl.numberOfPages = count
+        }
     }
     
-    func pageViewController(slidePageViewController: SlideViewController, didUpdatePageIndex index: Int) {
+    func pageViewController(pageViewController: SlideViewController, didUpdatePageIndex index: Int) {
         self.pageControl.currentPage = index
     }
     
